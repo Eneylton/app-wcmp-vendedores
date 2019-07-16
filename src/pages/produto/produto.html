@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Produtos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+
+    <ion-card padding *ngFor="let produto of listar">
+
+        <ion-thumbnail item-left>
+            <img style="width: 250px; height: 220px;" [src]="produto.images[0].src" />
+          </ion-thumbnail>
+        
+            <ion-label>Produto ID: </ion-label>
+            {{ produto.id }}
+  
+            <ion-label>Vendedor ID: </ion-label>
+            {{ produto.vendor }}
+
+            <ion-label>:Estoque </ion-label>
+            {{ produto.stock_quantity  }}
+
+            <ion-label>:Loja </ion-label>
+            {{ produto.store_name }}
+
+            <p>
+                <span [innerHTML]="produto.name.substr(0, 50) + '...'"></span>
+                <span [innerHTML]="produto.description.substr(0, 35) + '...'"></span>
+                <span [innerHTML]="produto.price_html"></span>
+              </p>
+            
+      </ion-card>
+
+</ion-content>

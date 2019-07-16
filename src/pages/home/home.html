@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -7,12 +7,50 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content no-padding>
+ 
+  <ion-grid>
+    <ion-row>
+    
+       
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+      <ion-card padding *ngFor="let vendedor of listar">
+        <ion-fab right>
+          <button ion-fab color="danger">
+            <ion-icon name="pin"></ion-icon>
+          </button>
+        </ion-fab>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+        <img style="margin-top: 10px;" src="./assets/images/mp.jpg" />
+
+          <ion-item>
+              <img style="margin-left:-8px; width: 55px; height: 55px; float: left;padding: 8px" src="./assets/images/loja.jpg" />
+              <h1 [innerHTML]="vendedor.shop.title"></h1>
+              <p><ion-icon name="pin"></ion-icon> {{ vendedor.address.address_1 }} </p>
+              <p>{{ vendedor.address.city }} - CEP: {{vendedor.address.postcode}} </p>
+              <hr />
+
+              <ion-icon name="ios-mail"></ion-icon> {{ vendedor.email }} <br/>
+              <ion-icon name="ios-call"></ion-icon> {{ vendedor.address.phone }}<br/>
+              <ion-icon name="ios-basket"></ion-icon> <a href="{{ vendedor.shop.url }}">Minha Loja</a>
+
+
+
+          </ion-item>
+
+            <ion-item>
+              <span item-start>18 min</span>
+              <span item-start>(2.6 mi)</span>
+              <button ion-button icon-start clear item-end>
+                <ion-icon name="navigate"></ion-icon>
+                Start
+              </button>
+            </ion-item>
+
+      </ion-card>
+
+    </ion-row>
+
+
+  </ion-grid>
 </ion-content>

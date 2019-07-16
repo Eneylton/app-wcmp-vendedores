@@ -1,0 +1,1 @@
+https://purezaweb.com/wp-json/wc/v2/products?consumer_key=ck_ed57920b299140fbed550ec077234d756f2abf73&consumer_secret=cs_ca01f30a42824b505ca053dad5de1d392236d2a9
